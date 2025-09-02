@@ -8,9 +8,9 @@ app.use(cors());
 
 // MySQL connection (use RDS endpoint, replace placeholders)
 const db = mysql.createConnection({
-  host: 'movies-database.cuc9gqmx86tp.ap-south-1.rds.amazonaws.com', // e.g., ticketdb.xxxxx.us-east-1.rds.amazonaws.com
+  host: 'movies-database.xxxxx.ap-south-1.rds.amazonaws.com', // e.g., ticketdb.xxxxx.us-east-1.rds.amazonaws.com
   user: 'admin',
-  password: 'QazWsxEdc123##',
+  password: 'xxxxxx',
   database: 'ticketdb'
 });
 
