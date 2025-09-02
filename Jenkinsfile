@@ -43,5 +43,13 @@ pipeline {
         """
       }
     }
+    stage('Deploy to ECS') {
+      steps { 
+          sh """
+            aws ecs update-service --cluster ${ECS_CLUSTER} --service ${FRONTEND_SERVICE} --force-new-deployment
+            aws ecs update-service --cluster ${ECS_CLUSTER} --service ${BACKEND_SERVICE} --force-new-deployment
+          """
+      }
+    }
   }
 }
