@@ -8,14 +8,14 @@ function App() {
   const [seats, setSeats] = useState(1);
 
   useEffect(() => {
-    axios.get('movie-app-lb-2048527481.ap-south-1.elb.amazonaws.com/movies') // Update to backend URL in prod
+    axios.get('http://movie-app-lb-2048527481.ap-south-1.elb.amazonaws.com/movies') // Update to backend URL in prod
       .then(res => setMovies(res.data))
       .catch(err => console.error(err));
   }, []);
 
   const handleBook = () => {
     if (!selectedMovie) return;
-    axios.post('movie-app-lb-2048527481.ap-south-1.elb.amazonaws.com/book', { // Update to backend URL in prod
+    axios.post('http://movie-app-lb-2048527481.ap-south-1.elb.amazonaws.com/book', { // Update to backend URL in prod
       movie_id: selectedMovie.id,
       user_name: userName,
       seats
