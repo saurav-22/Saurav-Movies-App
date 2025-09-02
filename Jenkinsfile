@@ -10,6 +10,11 @@ pipeline {
     BACKEND_SERVICE = 'backend-service'
   }
   stages {
+    stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            } 
+        }
     stage('Checkout') {
       steps {
         git branch: 'main', url: 'https://github.com/saurav-22/Saurav-Movies-App.git'
